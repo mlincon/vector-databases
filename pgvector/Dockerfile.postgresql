@@ -1,0 +1,24 @@
+FROM postgres:13-alpine
+
+ENV POSTGRES_USER=admin
+ENV POSTGRES_DB=app
+ENV POSTGRES_PASSWORD=pass
+ENV PGVECTOR_VERSION=v0.5.1
+
+# Install dependencies needed for building pgvector
+# hadolint ignore=DL3003,DL3018
+RUN apk add --no-cache --virtual .build-deps \
+        git \
+        build-base \
+        postgresql-dev \
+    && git clone --branch $PGVECTOR_VERSION https://github.com/pgvector/pgvector.git /pgvector \
+    && cd /pgvector \
+    && make \
+    && make install \
+    && apk del .build-deps \
+    && rm -rf /pgvector
+
+
+# COPY initdb/init.sql /docker-entrypoint-initdb.d
+
+CMD ["docker-entrypoint.sh", "postgres"]

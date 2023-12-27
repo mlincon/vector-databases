@@ -52,7 +52,7 @@ repos:
     hooks:
       - id: hadolint
         args:
-          - todo-app/Dockerfile.postgresql
+          - pgvector/Dockerfile.postgresql
 
   # go lints
   - repo: https://github.com/dnephin/pre-commit-golang

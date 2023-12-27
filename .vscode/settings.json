@@ -1,0 +1,14 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "pgvector-app",
+      "database": "app",
+      "username": "admin",
+      "password": "pass"
+    }
+  ]
+}
