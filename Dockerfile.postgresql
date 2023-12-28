@@ -19,6 +19,6 @@ RUN apk add --no-cache --virtual .build-deps \
     && rm -rf /pgvector
 
 
-# COPY initdb/init.sql /docker-entrypoint-initdb.d
+COPY database/pgvector.sql /docker-entrypoint-initdb.d
 
 CMD ["docker-entrypoint.sh", "postgres"]

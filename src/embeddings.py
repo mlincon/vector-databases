@@ -2,6 +2,16 @@ from openai import OpenAI
 from openai.types import CreateEmbeddingResponse
 
 
+def rpm_aware_embeddings(
+    openai_client: OpenAI,
+    text: str,
+    rpm: int = 3,
+    model: str = "text-embedding-ada-002",
+) -> list[float]:
+    # TODO: do something with rpm info
+    return get_embeddings_from_string(openai_client, text, model)
+
+
 def get_embeddings_from_string(
     openai_client: OpenAI,
     text: str,
