@@ -1,8 +1,10 @@
 -- set up schema and extension
 CREATE SCHEMA IF NOT EXISTS app;
 
-CREATE EXTENSION vector
-WITH SCHEMA app;
+-- ref: https://www.postgresql.org/docs/current/sql-createextension.html
+-- we add the extension to the schema via the search_path
+SET search_path = app;
+CREATE EXTENSION IF NOT EXISTS vector;
 
 -- disable
 -- DROP EXTENSION IF EXISTS vector;
