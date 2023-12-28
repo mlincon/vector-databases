@@ -1,11 +1,12 @@
 import os
 
 import pandas as pd
+from dotenv import find_dotenv, load_dotenv
+from openai import OpenAI
+
 from chunking import create_custom_chunks_for_blogs
 from costs import get_total_embeddings_cost
-from dotenv import find_dotenv, load_dotenv
 from embeddings import get_embeddings_from_string
-from openai import OpenAI
 
 # os.chdir("/workspaces/vector-databases/pgvector/blogs/")
 
