@@ -1,8 +1,9 @@
 import os
 import pgvector
 import psycopg2
+import psycopg
 from psycopg2.extras import execute_values
-from pgvector.psycopg2 import register_vector
+from pgvector.psycopg import register_vector
 
 
 def get_db_connection_string() -> str:
