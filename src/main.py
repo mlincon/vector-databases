@@ -2,12 +2,14 @@ import os
 import time
 
 import pandas as pd
+import numpy as np
 from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
 from chunking import create_custom_chunks_for_blogs
 from costs import get_total_embeddings_cost
 from embeddings import get_embeddings_from_string
+from pgvector_extension.psycopg_3 import execute_insert_query, execute_search_query
 from enums import RunEnvironment
 
 # os.chdir("/workspaces/vector-databases/src/")
@@ -48,3 +50,21 @@ for i in range(len(df_chunked.index)):
 # load embeddings
 df_embed = pd.read_csv("../data/timescale/blog_data_and_embeddings.csv")
 df_embed.head()
+
+# Prepare the list of tuples to insert
+data_list = [
+    (
+        row["title"],
+        row["url"],
+        row["content"],
+        int(row["tokens"]),
+        (row["embeddings"]),
+    )
+    for _, row in df_embed.iterrows()
+]
+
+execute_insert_query(
+    "INSERT INTO app.blogs (title, url, content, tokens, embedding) "
+    + "VALUES (%s, %s, %s, %s, %s)",
+    data_list,
+)

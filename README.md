@@ -17,6 +17,14 @@ PgVector-Python:
 - https://github.com/timescale/vector-cookbook
 - https://supabase.com/docs/guides/ai/vector-columns?database-method=sql
 - NOTE: psycopg is the successor to psycopg2: https://www.psycopg.org/psycopg3/docs/basic/install.html
+- HNSW index:
+  - https://jkatz05.com/post/postgres/pgvector-overview-0.5.0/
+  - https://www.crunchydata.com/blog/hnsw-indexes-with-postgres-and-pgvector
+- AWS RDS Postgres support:
+  - https://aws.amazon.com/about-aws/whats-new/2023/10/amazon-rds-postgresql-pgvector-hnsw-indexing/
+  - https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/
+  - https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-versions.html#postgresql-versions-version1313
+  - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html
 
 OpenAI Cookbooks on Vector Databases:
 
@@ -25,6 +33,7 @@ OpenAI Cookbooks on Vector Databases:
 ChromaDB:
 
 - AWS deployment: https://docs.trychroma.com/deployment#simple-aws-deployment
+- https://colab.research.google.com/drive/181Kummxd8yOyRqFu8I0aqjs2aqnOy4Fu?usp=sharing#scrollTo=6lfVmRQlepiI
 
 Chunking (Token size):
 
