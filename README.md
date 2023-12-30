@@ -13,18 +13,25 @@ PgVector-Python:
 - https://github.com/pgvector/pgvector-python
 - https://github.com/supabase/vecs/blob/main/src/vecs/collection.py
 - https://tembo.io/blog/vector-indexes-in-pgvector/ (pgvector indexes)
-- https://www.timescale.com/blog/postgresql-as-a-vector-database-create-store-and-query-openai-embeddings-with-pgvector/
+- [x] [Timescale: PostgreSQL as a Vector Database: Create, Store, and Query OpenAI Embeddings With pgvector ](https://www.timescale.com/blog/postgresql-as-a-vector-database-create-store-and-query-openai-embeddings-with-pgvector/)
 - https://github.com/timescale/vector-cookbook
 - https://supabase.com/docs/guides/ai/vector-columns?database-method=sql
-- NOTE: psycopg is the successor to psycopg2: https://www.psycopg.org/psycopg3/docs/basic/install.html
+- https://www.crunchydata.com/blog/topic/ai
+- https://github.com/CrunchyData/Postgres-AI-Tutorial
+- https://www.crunchydata.com/blog/whats-postgres-got-to-do-with-ai
+- https://www.crunchydata.com/blog/pgvector-performance-for-developers
+- https://www.crunchydata.com/blog/scaling-vector-data-with-postgres
+- [x] [psycopg is the successor to psycopg2](https://www.psycopg.org/psycopg3/docs/basic/install.html)
 - HNSW index:
   - https://jkatz05.com/post/postgres/pgvector-overview-0.5.0/
-  - https://www.crunchydata.com/blog/hnsw-indexes-with-postgres-and-pgvector
+  - [x] [Crunchydata: HNSW Indexes with Postgres and pgvector](https://www.crunchydata.com/blog/hnsw-indexes-with-postgres-and-pgvector)
+  - [x] [Blog: Similarity Search, Part 4: Hierarchical Navigable Small World (HNSW)](https://towardsdatascience.com/similarity-search-part-4-hierarchical-navigable-small-world-hnsw-2aad4fe87d37)
 - AWS RDS Postgres support:
   - https://aws.amazon.com/about-aws/whats-new/2023/10/amazon-rds-postgresql-pgvector-hnsw-indexing/
   - https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/
   - https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-versions.html#postgresql-versions-version1313
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html
+
 
 OpenAI Cookbooks on Vector Databases:
 
@@ -39,5 +46,5 @@ Chunking (Token size):
 
 - https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken
 - https://python.langchain.com/docs/modules/data_connection/document_transformers/#text-splitters
-- https://www.pinecone.io/learn/chunking-strategies/
+- [x] https://www.pinecone.io/learn/chunking-strategies/
 - https://python.langchain.com/docs/modules/data_connection/document_transformers/
