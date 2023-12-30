@@ -37,3 +37,20 @@ def get_embeddings_from_string(
         input=text.replace("\n", " "),
     )
     return response.data[0].embedding
+
+
+def get_completion_from_messages(
+    openai_client: OpenAI,
+    messages: list,
+    model: str = "gpt-3.5-turbo-0613",
+    temperature: int = 0,
+    max_tokens: int = 1000,
+):
+    response = openai_client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
+
+    return response.choices[0].message.content

@@ -7,12 +7,10 @@ from openai import OpenAI
 
 from chunking import create_custom_chunks_for_blogs
 from costs import get_total_embeddings_cost
-from embeddings import get_embeddings_from_string
 from enums import RunEnvironment
-from pgvector_extension.psycopg_3 import (  # execute_search_query,
-    create_ivfflat_index,
-    execute_insert_query,
-)
+from openai_funcs import get_completion_from_messages, get_embeddings_from_string
+from pgvector_extension.psycopg_3 import create_ivfflat_index, execute_insert_query
+from search import get_top3_similar_docs
 
 # os.chdir("/workspaces/vector-databases/src/")
 
@@ -73,3 +71,38 @@ execute_insert_query(
 
 # create index
 create_ivfflat_index("app", "blogs", "embedding")
+
+# question to query
+input = "How is Timescale used in IoT?"
+
+embedding: list[float] = get_embeddings_from_string(openai_client, input)
+related_docs = get_top3_similar_docs(
+    embedding,
+    "SELECT content FROM app.blogs ORDER BY embedding <=> %s LIMIT 3",
+)
+
+# Set system message to help set appropriate tone and context for model
+# Prepare messages to pass to model
+# We use a delimiter to help the model understand the where the user_input starts and ends
+delimiter = "```"
+system_message = """
+    You are a friendly chatbot. \
+    You can answer questions about timescaledb, its features and its use cases. \
+    You respond in a concise, technically credible tone. \
+    """
+messages = [
+    {"role": "system", "content": system_message},
+    {"role": "user", "content": f"{delimiter}{input}{delimiter}"},
+    {
+        "role": "assistant",
+        "content": f"Relevant Timescale case studies information: \n {related_docs[0][0]} \n {related_docs[1][0]} {related_docs[2][0]}",
+    },
+]
+
+final_response = get_completion_from_messages(
+    openai_client,
+    messages,
+)
+
+print(input)
+print(final_response)
