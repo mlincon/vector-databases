@@ -4,7 +4,7 @@ CREATE SCHEMA IF NOT EXISTS app;
 -- ref: https://www.postgresql.org/docs/current/sql-createextension.html
 CREATE EXTENSION IF NOT EXISTS vector;
 
--- create a table
+-- create a table for blogs data from timescale tutorial
 -- noqa: disable=all
 DROP TABLE IF EXISTS app.blogs;
 CREATE TABLE app.blogs (

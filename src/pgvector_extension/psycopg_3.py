@@ -89,6 +89,5 @@ def create_ivfflat_index(schema: str, table: str, index_col: str):
                 sql.Identifier(index_col),
                 sql.Identifier(str(num_lists)),
             )
-            print(index_query)
             cur.execute(index_query)
             conn.commit()
