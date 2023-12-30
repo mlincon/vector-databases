@@ -2,14 +2,10 @@
 CREATE SCHEMA IF NOT EXISTS app;
 
 -- ref: https://www.postgresql.org/docs/current/sql-createextension.html
--- we add the extension to the schema via the search_path
-CREATE EXTENSION IF NOT EXISTS vector SCHEMA app;
-SET search_path = app, public;
-
--- disable
--- DROP EXTENSION IF EXISTS vector;
+CREATE EXTENSION IF NOT EXISTS vector;
 
 -- create a table
+-- noqa: disable=all
 DROP TABLE IF EXISTS app.blogs;
 CREATE TABLE app.blogs (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -20,3 +16,4 @@ CREATE TABLE app.blogs (
     embedding VECTOR(1536) -- 1536 is the vector dimension from OpenAI
 )
 ;
+-- noqa: enable=all

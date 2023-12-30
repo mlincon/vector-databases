@@ -2,15 +2,17 @@ import os
 import time
 
 import pandas as pd
-import numpy as np
 from dotenv import find_dotenv, load_dotenv
 from openai import OpenAI
 
 from chunking import create_custom_chunks_for_blogs
 from costs import get_total_embeddings_cost
 from embeddings import get_embeddings_from_string
-from pgvector_extension.psycopg_3 import execute_insert_query, execute_search_query
 from enums import RunEnvironment
+from pgvector_extension.psycopg_3 import (  # execute_search_query,
+    create_ivfflat_index,
+    execute_insert_query,
+)
 
 # os.chdir("/workspaces/vector-databases/src/")
 
@@ -68,3 +70,6 @@ execute_insert_query(
     + "VALUES (%s, %s, %s, %s, %s)",
     data_list,
 )
+
+# create index
+create_ivfflat_index("app", "blogs", "embedding")
