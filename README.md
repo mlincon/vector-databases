@@ -15,7 +15,7 @@ PgVector-Python:
 - https://tembo.io/blog/vector-indexes-in-pgvector/ (pgvector indexes)
 - [x] [Timescale: PostgreSQL as a Vector Database: Create, Store, and Query OpenAI Embeddings With pgvector ](https://www.timescale.com/blog/postgresql-as-a-vector-database-create-store-and-query-openai-embeddings-with-pgvector/)
 - https://github.com/timescale/vector-cookbook
-- https://supabase.com/docs/guides/ai/vector-columns?database-method=sql
+- https://supabase.com/docs/guides/ai
 - https://www.crunchydata.com/blog/topic/ai
 - https://github.com/CrunchyData/Postgres-AI-Tutorial
 - https://www.crunchydata.com/blog/whats-postgres-got-to-do-with-ai
@@ -29,13 +29,21 @@ PgVector-Python:
 - AWS RDS Postgres support:
   - https://aws.amazon.com/about-aws/whats-new/2023/10/amazon-rds-postgresql-pgvector-hnsw-indexing/
   - https://aws.amazon.com/about-aws/whats-new/2023/05/amazon-rds-postgresql-pgvector-ml-model-integration/
-  - https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-versions.html#postgresql-versions-version1313
+  - [x] [PostgreSQL version 13.13 on Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/PostgreSQLReleaseNotes/postgresql-versions.html#postgresql-versions-version1313)
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html
+  - [x] :star: [Accelerate HNSW indexing and searching with pgvector on Amazon Aurora PostgreSQL-compatible edition and Amazon RDS for PostgreSQL](https://aws.amazon.com/blogs/database/accelerate-hnsw-indexing-and-searching-with-pgvector-on-amazon-aurora-postgresql-compatible-edition-and-amazon-rds-for-postgresql/)
+  - https://aws.amazon.com/blogs/machine-learning/text-embedding-and-sentence-similarity-retrieval-at-scale-with-amazon-sagemaker-jumpstart/
+  - :star: https://supabase.com/blog/pgvector-vs-pinecone
 
+Huggingface & OpenAI/Misc.:
+- https://huggingface.co/spaces/mteb/leaderboard
+- https://platform.openai.com/tokenizer
 
 OpenAI Cookbooks on Vector Databases:
-
 - https://weaviate.io/blog/distance-metrics-in-vector-search
+
+Hybrid Search:
+- https://weaviate.io/blog/hybrid-search-explained
 
 ChromaDB:
 
@@ -46,5 +54,16 @@ Chunking (Token size):
 
 - https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken
 - https://python.langchain.com/docs/modules/data_connection/document_transformers/#text-splitters
-- [x] https://www.pinecone.io/learn/chunking-strategies/
+- [x] [Pinecone: Chunking Strategies for LLM Applications](https://www.pinecone.io/learn/chunking-strategies/)
 - https://python.langchain.com/docs/modules/data_connection/document_transformers/
+
+Vector DB Comparison:
+- https://vdbs.superlinked.com/
+
+RAG:
+- https://www.youtube.com/watch?v=wBhY-7B2jdY
+- https://www.canva.com/design/DAFw0D8y038/5Yh9MA2XXd2Lfr2thcsuLA/edit
+
+Pydantic for LLM:
+- https://blog.pydantic.dev/blog/2024/01/04/steering-large-language-models-with-pydantic/
+- https://blog.pydantic.dev/blog/2024/01/18/llm-validation/
