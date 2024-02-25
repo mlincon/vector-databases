@@ -50,20 +50,5 @@ ChromaDB:
 - AWS deployment: https://docs.trychroma.com/deployment#simple-aws-deployment
 - https://colab.research.google.com/drive/181Kummxd8yOyRqFu8I0aqjs2aqnOy4Fu?usp=sharing#scrollTo=6lfVmRQlepiI
 
-Chunking (Token size):
-
-- https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken
-- https://python.langchain.com/docs/modules/data_connection/document_transformers/#text-splitters
-- [x] [Pinecone: Chunking Strategies for LLM Applications](https://www.pinecone.io/learn/chunking-strategies/)
-- https://python.langchain.com/docs/modules/data_connection/document_transformers/
-
 Vector DB Comparison:
 - https://vdbs.superlinked.com/
-
-RAG:
-- https://www.youtube.com/watch?v=wBhY-7B2jdY
-- https://www.canva.com/design/DAFw0D8y038/5Yh9MA2XXd2Lfr2thcsuLA/edit
-
-Pydantic for LLM:
-- https://blog.pydantic.dev/blog/2024/01/04/steering-large-language-models-with-pydantic/
-- https://blog.pydantic.dev/blog/2024/01/18/llm-validation/
